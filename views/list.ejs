@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách truy cập</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Danh sách truy cập</h1>
+
+    <form method="GET" action="/list">
+        <label for="date">Lọc theo ngày:</label>
+        <input type="date" name="date" id="date">
+        <button type="submit">Lọc</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>IP</th>
+            <th>Thời gian</th>
+        </tr>
+        <% visits.forEach((visit, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= visit.ip %></td>
+                <td><%= new Date(visit.time).toLocaleString() %></td>
+            </tr>
+        <% }); %>
+    </table>
+
+    <div class="pagination">
+        <% if (page > 1) { %>
+            <a href="/list?page=<%= page - 1 %>">Trang trước</a>
+        <% } %>
+        <a href="/list?page=<%= page + 1 %>">Trang tiếp</a>
+    </div>
+</body>
+</html>

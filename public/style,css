@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; text-align: center; }
+table { width: 80%; margin: auto; border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 10px; }
+.pagination a { padding: 10px; margin: 5px; border: 1px solid #000; text-decoration: none; }
+form { margin-bottom: 20px; }
