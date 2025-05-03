@@ -2,14 +2,63 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Danh sách truy cập</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách truy cập - CTech Lab</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #0073e6;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #0073e6;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination a {
+            padding: 10px 15px;
+            text-decoration: none;
+            background: #0073e6;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .pagination a:hover {
+            background: #005bb5;
+        }
+    </style>
 </head>
 <body>
-    <h1>Danh sách truy cập</h1>
+    <h1>📊 Danh sách truy cập CTech Lab</h1>
 
     <form method="GET" action="/list">
-        <label for="date">Lọc theo ngày:</label>
+        <label for="date">📅 Lọc theo ngày:</label>
         <input type="date" name="date" id="date">
         <button type="submit">Lọc</button>
     </form>
@@ -17,8 +66,8 @@
     <table>
         <tr>
             <th>#</th>
-            <th>IP</th>
-            <th>Thời gian</th>
+            <th>Địa chỉ IP</th>
+            <th>Thời gian truy cập</th>
         </tr>
         <% visits.forEach((visit, index) => { %>
             <tr>
@@ -31,9 +80,9 @@
 
     <div class="pagination">
         <% if (page > 1) { %>
-            <a href="/list?page=<%= page - 1 %>">Trang trước</a>
+            <a href="/list?page=<%= page - 1 %>">⬅ Trang trước</a>
         <% } %>
-        <a href="/list?page=<%= page + 1 %>">Trang tiếp</a>
+        <a href="/list?page=<%= page + 1 %>">➡ Trang tiếp</a>
     </div>
 </body>
 </html>
