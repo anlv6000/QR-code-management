@@ -11,7 +11,7 @@ app.set("view engine", "ejs"); // Sử dụng EJS để hiển thị web
 app.use(express.static("public")); // Tải CSS
 
 // Kiểm tra biến MONGO_URI để đảm bảo chính xác
-const MONGO_URI = process.env.MONGO_URI || "mongodb://mongo:mjhlAOngZefJBhaIGEXVQATrGXGLnFTU@mongodb-9ezx.railway.internal/tracking?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://mongo:mjhlAOngZefJBhaIGEXVQATrGXGLnFTU@interchange.proxy.rlwy.net:18866/tracking_corrected?retryWrites=true&w=majority";
 console.log("🔍 MONGO_URI:", MONGO_URI);
 
 // Kết nối MongoDB với try-catch để xử lý lỗi tốt hơn
