@@ -11,7 +11,7 @@ app.set("view engine", "ejs"); // Sử dụng EJS để hiển thị web
 app.use(express.static("public")); // Tải CSS
 
 // Sử dụng biến môi trường MONGO_URI, nếu không có thì mặc định cho local
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/tracking";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://mongo:mjhlAOngZefJBhaIGEXVQATRgXLnFTU@mongodb-9ezx.railway.internal/tracking?retryWrites=true&w=majority";
 
 mongoose.connect(MONGO_URI)
     .then(() => console.log("🔗 Đã kết nối MongoDB!"))
