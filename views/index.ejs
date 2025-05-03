@@ -2,11 +2,51 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thống kê truy cập</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê truy cập CTech Lab</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #0073e6;
+            margin-bottom: 20px;
+        }
+        .count {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn-share {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .btn-share:hover {
+            background-color: #005bb5;
+        }
+    </style>
 </head>
 <body>
-    <h1>Lượt truy cập vào /track</h1>
-    <p class="count">🔢 <%= count %> lần</p>
+    <h1>📊 Thống kê truy cập CTech Lab</h1>
+    
+    <p class="count">🔢 Số lượt truy cập: <%= count %> lần</p>
+
+    <button class="btn-share" onclick="shareToFacebook()">📢 Chia sẻ lên Facebook</button>
+
+    <script>
+        function shareToFacebook() {
+            window.open("https://www.facebook.com/sharer/sharer.php?u=https://ctechlab.com", "_blank");
+        }
+    </script>
 </body>
 </html>
