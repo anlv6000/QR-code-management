@@ -21,7 +21,7 @@
             font-weight: bold;
             margin-top: 20px;
         }
-        .btn-share {
+        .btn {
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #0073e6;
@@ -30,8 +30,10 @@
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
         }
-        .btn-share:hover {
+        .btn:hover {
             background-color: #005bb5;
         }
     </style>
@@ -41,7 +43,8 @@
     
     <p class="count">🔢 Số lượt truy cập: <%= count %> lần</p>
 
-    <button class="btn-share" onclick="shareToFacebook()">📢 Chia sẻ lên Facebook</button>
+    <a href="/list" class="btn">📜 Xem danh sách truy cập</a>
+    <button class="btn" onclick="shareToFacebook()">📢 Chia sẻ lên Facebook</button>
 
     <script>
         function shareToFacebook() {
